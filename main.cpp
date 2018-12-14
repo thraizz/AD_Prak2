@@ -41,12 +41,15 @@ int main()
         printf("6 - Liste sortieren\n");
         printf("12 - Ende\n\n");
 
+        // Hier muss noch scanf für die Eingabe hin
+
 		switch(choice){
 
 			case 1:  
                 printf("Erstelle die Listenobjekte...\n");
 				text = new TEXT();
 				for(int i = 0; i < 9; i++){
+                    // Hier muss irgendwie auf const gecastet werden damit anhaenge methode funktioniert
 					text->anhaenge(name[i]);
 				}
 				break;
@@ -59,8 +62,8 @@ int main()
 			case 3:
                 printf("Gib das Wort ein, das angehaenget werden soll");
 				eingabe = new char[anzIn];
-				cin.getline(eingabe, anzIn);
-				cin.clear();
+				std::cin.getline(eingabe, anzIn);
+				std::cin.clear();
 				text->anhaenge(eingabe);
 				delete[] eingabe;
 				break;
@@ -68,8 +71,8 @@ int main()
 			case 4: 
                 printf("Bitte Wort eingeben");
 				eingabe = new char[anzIn];
-				cin.getline(eingabe, anzIn);
-				cin.clear();
+				std::cin.getline(eingabe, anzIn);
+				std::cin.clear();
 				evkd = new EVKD(eingabe);
 				text->einfuegeSortiert(evkd, text->Anz);
 				delete[] eingabe;
@@ -77,8 +80,8 @@ int main()
 
 			case 5:  
                 printf("Welches Element soll geloescht werden?");
-				cin >> ein;
-        		cout << "\n\n\n\n";
+				std::cin >> ein;
+                std::cout << "\n\n\n\n";
 				text->loesche(ein);
 				break;
 

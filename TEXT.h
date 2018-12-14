@@ -6,8 +6,7 @@ class TEXT{
     public:
     int Anz;
     
-    TEXT(int Anz): Start(NULL) {};
-
+    TEXT(int Anz=0): Start(NULL) {};
     void anhaenge (char* In) {};      
 
     void einfuegeSortiert(EVKD * In, int Max){};
