@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/mnt/e/Users/schue/Documents/Studium/AD/Praktikum2/a.out",
+            "args": ["-fThreading"],
+            "preLaunchTask" : "build main", 
+            "stopAtEntry": false,
+            "cwd": "/mnt/e/Users/schue/Documents/Studium/AD/Praktikum2",
+            "environment": [],
+            "externalConsole": true,
+            "sourceFileMap": { "/mnt/e/" : "E:\\" },
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "pipeTransport": {
+                "pipeCwd": "",
+                "pipeProgram": "C:\\Windows\\System32\\bash.exe",
+                "pipeArgs": ["-c"],
+                "debuggerPath": "/usr/bin/gdb"
+            },
+        },
+    ]
+}
