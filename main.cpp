@@ -136,7 +136,8 @@ class TEXT{
 };
 
 int main()
-{
+{   
+    /**
     char * test1 = "Schmitz, Anna";
     char * test2 = "Schmitz, Thorsten";
     int str = strcmp(test1, test2);
@@ -147,6 +148,8 @@ int main()
     printf ("Ergebnis von objekt-bezogenem strcmp: %d\n", str);
     bool str2;    str2 = (testobj1 > testobj2);
     printf ("Ergebnis von Methode: %d\n", str2);
+    **/
+
 	int choice, anzIn, ein;
 	char *eingabe;
 	TEXT *text = new TEXT();
@@ -157,39 +160,41 @@ int main()
 
 
 	do{
-
-		cout << endl << "Bitte waehlen:" << endl
-			<< "1 - Listenobjekt erstellen" << endl
-			<< "2 - Liste anzeigen" << endl
-			<< "3 - Element anhaenge" << endl
-			<< "4 - Element sortiert einfuegen" << endl
-			<< "5 - Element loeschen" << endl
-			<< "6 - Liste sortieren" << endl
-			<< "12 - Ende" << endl;
-		cin >> choice;
-		cout << "\n\n\n\n";
-
+        printf("Waehlen Sie eine der Möglichkeiten:\n");
+        printf("1 - Listenobjekt erstellen\n");
+        printf("2 - Liste anzeigen\n");
+        printf("3 - Element anhaenge\n");
+        printf("4 - Element sortiert einfuegen\n");
+        printf("5 - Element loeschen\n");
+        printf("6 - Liste sortieren\n");
+        printf("12 - Ende\n\n");
 
 		switch(choice){
 
-			case 1:  cout << endl << "Listenobjekt wird erstellt" << endl;
+			case 1:  
+                printf("Erstelle die Listenobjekte...\n");
 				text = new TEXT();
 				for(int i = 0; i < 9; i++){
 					text->anhaenge(name[i]);
 				}
 				break;
 
-			case 2:  cout << endl << "Inhalt der Liste" << endl << endl;
+			case 2: 
+                printf("Der Inhalt der Liste ist: ");
 				text->zeigeDich();
 				break;
-			case 3:  cout << endl << "Bitte Wort eingeben, das angehaenget werden soll" << endl;
+
+			case 3:
+                printf("Gib das Wort ein, das angehaenget werden soll");
 				eingabe = new char[anzIn];
 				cin.getline(eingabe, anzIn);
 				cin.clear();
 				text->anhaenge(eingabe);
 				delete[] eingabe;
 				break;
-			case 4:  cout << endl << "Bitte Wort eingeben" << endl;
+
+			case 4: 
+                printf("Bitte Wort eingeben");
 				eingabe = new char[anzIn];
 				cin.getline(eingabe, anzIn);
 				cin.clear();
@@ -197,12 +202,16 @@ int main()
 				text->einfuegeSortiert(evkd, text->Anz);
 				delete[] eingabe;
 				break;
-			case 5:  cout << endl << "Welches Element soll geloescht werden?" << endl;
+
+			case 5:  
+                printf("Welches Element soll geloescht werden?");
 				cin >> ein;
         		cout << "\n\n\n\n";
 				text->loesche(ein);
 				break;
-			case 6:  cout << endl << "Liste wird sortiert" << endl;
+
+			case 6:
+                printf("Liste wird sortiert");
 				text->iSort();
 				break;
 
